@@ -1,0 +1,12 @@
+
+langchain
+langchain-core
+langchain-groq
+langchain-tavily
+python-dotenv
+pydantic
+requests
+beautifulsoup4
+certifi
+streamlit
+reportlab
