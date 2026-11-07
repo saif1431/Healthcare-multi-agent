@@ -1,26 +1,31 @@
 
-import sys
+from services.pdf_service import generate_pdf
 
-from services.workflow import run_research
+sample_report = """
+# Latest Developments in Cancer Treatment
 
+## Executive Summary
 
-sys.stdout.reconfigure(encoding="utf-8")
+This is a sample healthcare research report.
 
-topic = "Latest developments in cancer treatment"
+## Key Developments
 
-print("\nStarting Healthcare Research Workflow...\n")
+- Development one: Example research finding.
+- Development two: Another example finding.
 
-result = run_research(topic)
+## Limitations
 
+This is illustrative content, not real medical evidence.
 
-print("\n========== RESEARCH ==========\n")
-print(result["research"])
+## Sources
 
-print("\n========== FACT CHECK ==========\n")
-print(result["fact_check"])
+- https://example.com/article
+"""
 
-print("\n========== SUMMARY ==========\n")
-print(result["summary"])
+pdf_path = generate_pdf(
+    report_content=sample_report,
+    topic="Latest developments in cancer treatment"
+)
 
-print("\n========== FINAL REPORT ==========\n")
-print(result["report"])
+print("PDF generated successfully!")
+print("PDF Location:", pdf_path)
